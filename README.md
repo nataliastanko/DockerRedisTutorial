@@ -1,10 +1,14 @@
 ## Docker Redis Tutorial
 
-## Step 1.
+## Step 2.
+
+The build should end with printing
+
+    Successfully built some-ID
 
 Run
 
-    docker build .
+    docker run some-ID
 
 ***
 
