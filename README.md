@@ -1,24 +1,53 @@
 ## Docker Redis Tutorial
 
-## Step 5.
+## Step 6.
 
-Tag an image running
-
-    docker build -t dockerusername/reponame:version .
-
-replacing ```dockerusername``` with your docker username,
-```reponame``` with a new project name
-and ```version``` with a new version number (in fact it is a  tag) or just ```latest```.
-
-Example:
-
-    docker build -t nataliastanko/redis-tutorial:latest .
+### Commit the ready running image
 
 Run
 
-    docker run -t nataliastanko/redis-tutorial
+    docker ps
 
-to run latest version.
+to get IDofRunningContainer,
+the run
+
+    docker commit IDofRunningContainer
+
+You will get a new IDimage as a result.
+
+**or**
+
+### Generate an image manually and commit
+
+Run
+
+    docker run -it alpine sh
+
+to create a new image.
+
+Within a running container run
+
+    RUN apk add --update redis
+
+Open second terminal window and execute
+
+    docker ps
+
+to get IDofRunningContainer,
+then execute
+
+    docker commit -c 'CMD["redis-server"]' IDofRunningContainer
+
+-c sets a default startup command.
+
+You will get a new IDimage as a result.
+
+Run
+
+    docker run IDimage
+
+to start a new container out of the image just created
+and get redy redis instance.
 
 ***
 
