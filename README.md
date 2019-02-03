@@ -1,18 +1,29 @@
 ## Docker Redis Tutorial
 
-## Step 3.
+## Step 4.
 
-The run should print
+Abort running process with ctr/cmd C
 
-    Ready to accept connections
+Run
 
-Writing a docker file is like being given a computer with no OS
-and being told to install some software.
+    docker build .
 
-    Running in some-ID
+rebuilding an image with cache
+after adding additional instruction ```RUN apk add --update gcc```.
 
-means temporary in-memory in-between-steps created container
-created using sourced image from a previous step.
+New instruction will use container from step 2/3 from cache
+to create a new File System Snapshop.
+
+New snapshots will be created from the point of added/edited line of intruction.
+
+Build will use cached images to reduce time of processing
+and that is one of the reasons why docker is so popular.
+
+Run again
+
+    docker build .
+
+to see how quickly it went this time.
 
 ***
 
