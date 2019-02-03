@@ -1,14 +1,18 @@
 ## Docker Redis Tutorial
 
-## Step 2.
+## Step 3.
 
-The build should end with printing
+The run should print
 
-    Successfully built some-ID
+    Ready to accept connections
 
-Run
+Writing a docker file is like being given a computer with no OS
+and being told to install some software.
 
-    docker run some-ID
+    Running in some-ID
+
+means temporary in-memory in-between-steps created container
+created using sourced image from a previous step.
 
 ***
 
