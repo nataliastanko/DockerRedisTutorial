@@ -1,29 +1,24 @@
 ## Docker Redis Tutorial
 
-## Step 4.
+## Step 5.
 
-Abort running process with ctr/cmd C
+Tag an image running
+
+    docker build -t dockerusername/reponame:version .
+
+replacing ```dockerusername``` with your docker username,
+```reponame``` with a new project name
+and ```version``` with a new version number (in fact it is a  tag) or just ```latest```.
+
+Example:
+
+    docker build -t nataliastanko/redis-tutorial:latest .
 
 Run
 
-    docker build .
+    docker run -t nataliastanko/redis-tutorial
 
-rebuilding an image with cache
-after adding additional instruction ```RUN apk add --update gcc```.
-
-New instruction will use container from step 2/3 from cache
-to create a new File System Snapshop.
-
-New snapshots will be created from the point of added/edited line of intruction.
-
-Build will use cached images to reduce time of processing
-and that is one of the reasons why docker is so popular.
-
-Run again
-
-    docker build .
-
-to see how quickly it went this time.
+to run latest version.
 
 ***
 
